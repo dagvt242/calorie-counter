@@ -1,0 +1,25 @@
+{
+  "name": "calorie-counter",
+  "version": "1.0.0",
+  "description": "**Головна панель (Dashboard):**\r * Відображення поточної дати.\r * Прогрес-бар спожитих калорій (зміна кольору при перевищенні ліміту).\r * Список спожитої їжі за день (розбитий на сніданок, обід, вечерю, перекуси).\r * Кнопка \"Додати прийом їжі\".",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dagvt242/calorie-counter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dagvt242/calorie-counter/issues"
+  },
+  "homepage": "https://github.com/dagvt242/calorie-counter#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
