@@ -1,3 +1,6 @@
+import Product from '../models/Product.js';
+import MealEntry from '../models/MealEntry.js';
+
 export default class DataManager {
     constructor() {
         if (DataManager.instance) return DataManager.instance;
@@ -13,8 +16,18 @@ export default class DataManager {
         try {
             const response = await fetch(`${this.apiUrl}/data`);
             const data = await response.json();
-            this.meals = data.meals || [];
-            console.log("[DataManager] Дані успішно завантажено з сервера.");
+
+            if (data.meals && data.meals.length > 0) {
+                this.meals = data.meals.map(item => {
+                    const p = item.product;
+                    const product = new Product(p.id, p.name, p.caloriesPer100g, p.proteins, p.fats, p.carbs);
+                    return new MealEntry(item.id, product, item.weightInGrams, new Date(item.date));
+                });
+            } else {
+                this.meals = [];
+            }
+
+            console.log("[DataManager] Дані успішно завантажено та відновлено.");
             return this.meals;
         } catch (error) {
             console.error("[DataManager] Помилка завантаження:", error);
@@ -32,7 +45,7 @@ export default class DataManager {
 
             if (response.ok) {
                 this.meals.push(mealEntry);
-                console.log("[DataManager] Запис успішно збережено у файлі.");
+                console.log("[DataManager] Запис успішно збережено на сервері.");
             }
         } catch (error) {
             console.error("[DataManager] Помилка збереження на сервері:", error);
