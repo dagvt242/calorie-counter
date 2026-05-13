@@ -7,10 +7,13 @@ import MealEntry from './models/MealEntry.js';
 import DashboardUI from './ui/DashboardUI.js';
 import FormUI from './ui/FormUI.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     console.log("Додаток ініціалізовано.");
 
     const db = new DataManager();
+
+    const initialMeals = await db.loadData();
+    appObserver.notify('mealAdded', null);
 
     const DAILY_CALORIE_GOAL = 2000;
 
