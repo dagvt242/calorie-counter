@@ -1,36 +1,45 @@
 export default class DataManager {
     constructor() {
-        if (DataManager.instance) {
-            console.log("[Singleton] Повертаємо існуючий екземпляр бази даних.");
-            return DataManager.instance;
-        }
+        if (DataManager.instance) return DataManager.instance;
 
-        console.log("[Singleton] Створюємо першу і єдину базу даних.");
-
+        this.apiUrl = 'http://localhost:5000/api';
         this.meals = [];
-        this.waterLogs = [];
         this.currentUser = null;
 
         DataManager.instance = this;
     }
 
-    setUser(user) {
-        this.currentUser = user;
+    async loadData() {
+        try {
+            const response = await fetch(`${this.apiUrl}/data`);
+            const data = await response.json();
+            this.meals = data.meals || [];
+            console.log("[DataManager] Дані успішно завантажено з сервера.");
+            return this.meals;
+        } catch (error) {
+            console.error("[DataManager] Помилка завантаження:", error);
+            return [];
+        }
     }
 
-    getUser() {
-        return this.currentUser;
-    }
+    async addMeal(mealEntry) {
+        try {
+            const response = await fetch(`${this.apiUrl}/meals`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(mealEntry)
+            });
 
-    addMeal(mealEntry) {
-        this.meals.push(mealEntry);
+            if (response.ok) {
+                this.meals.push(mealEntry);
+                console.log("[DataManager] Запис успішно збережено у файлі.");
+            }
+        } catch (error) {
+            console.error("[DataManager] Помилка збереження на сервері:", error);
+        }
     }
 
     getAllMeals() {
         return this.meals;
-    }
-
-    saveData() {
-        console.log("Дані успішно збережено в локальне сховище (Симуляція).");
     }
 }
