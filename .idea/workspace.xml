@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c92d7bad-fe76-49fc-8212-dbc338d456dd" name="Changes" comment="" />
+    <list default="true" id="c92d7bad-fe76-49fc-8212-dbc338d456dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/js/ui/FormUI.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +26,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/pattern-strategy",
+    "git-widget-placeholder": "feature/ui-forms",
     "last_opened_file_path": "C:/Users/User/Desktop/Лабораторні/КПЗ/calorie-counter",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
