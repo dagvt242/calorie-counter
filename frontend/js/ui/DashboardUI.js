@@ -53,17 +53,18 @@ export default class DashboardUI {
         `;
     }
 
-    updateDashboard(currentCalories, targetCalories, meals) {
+    updateDashboard(currentCalories, targetCalories, meals, currentWater = 0, targetWater = 2000) {
         const container = document.getElementById(this.containerId);
         if (!container) {
-            console.error(`[DashboardUI] Помилка: елемент з ID '${this.containerId}' не знайдено на сторінці.`);
+            console.error(`[DashboardUI] Помилка: елемент з ID '${this.containerId}' не знайдено.`);
             return;
         }
 
         const progressHtml = this.renderProgress(currentCalories, targetCalories);
+        const waterHtml = this.renderWater(currentWater, targetWater);
         const mealsHtml = this.renderMealList(meals);
 
-        container.innerHTML = progressHtml + mealsHtml;
-        console.log("[DashboardUI] Інтерфейс головної панелі успішно оновлено.");
+        container.innerHTML = progressHtml + waterHtml + mealsHtml;
+        console.log("[DashboardUI] Інтерфейс успішно оновлено (з водою).");
     }
 }
