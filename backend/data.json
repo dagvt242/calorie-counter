@@ -1,5 +1,44 @@
 {
-  "meals": [],
+  "meals": [
+    {
+      "id": "1778715486621",
+      "product": {
+        "id": "1778715486621",
+        "name": "Вівсянка",
+        "caloriesPer100g": 350,
+        "proteins": 1.5,
+        "fats": 2.9,
+        "carbs": 3.1
+      },
+      "weightInGrams": 200,
+      "date": "2026-05-13T23:38:06.621Z",
+      "totalCalories": 700,
+      "totalMacros": {
+        "proteins": 3,
+        "fats": 5.8,
+        "carbs": 6.2
+      }
+    },
+    {
+      "id": "1778715525293",
+      "product": {
+        "id": "1778715525293",
+        "name": "Борщ",
+        "caloriesPer100g": 400,
+        "proteins": 4.5,
+        "fats": 5.4,
+        "carbs": 3.2
+      },
+      "weightInGrams": 350,
+      "date": "2026-05-13T23:38:45.293Z",
+      "totalCalories": 1400,
+      "totalMacros": {
+        "proteins": 15.75,
+        "fats": 18.900000000000002,
+        "carbs": 11.2
+      }
+    }
+  ],
   "water": [],
   "user": null
 }

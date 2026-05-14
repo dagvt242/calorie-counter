@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c92d7bad-fe76-49fc-8212-dbc338d456dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/ui/DashboardUI.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/js/ui/DashboardUI.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +28,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/ui-water-tracker",
     "last_opened_file_path": "C:/Users/User/Desktop/Лабораторні/КПЗ/calorie-counter",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

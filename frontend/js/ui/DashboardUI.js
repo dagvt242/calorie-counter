@@ -66,4 +66,20 @@ export default class DashboardUI {
         container.innerHTML = progressHtml + mealsHtml;
         console.log("[DashboardUI] Інтерфейс головної панелі успішно оновлено.");
     }
+
+    renderWater(currentVolume, targetVolume) {
+        const percentage = Math.min((currentVolume / targetVolume) * 100, 100).toFixed(0);
+        return `
+        <div class="dashboard-widget water-widget">
+            <h3>Гідратація 💧</h3>
+            <div class="water-progress-circle">
+                <strong>${currentVolume}</strong> / ${targetVolume} мл (${percentage}%)
+            </div>
+            <div class="water-buttons">
+                <button class="btn-water" data-amount="250">+250 мл</button>
+                <button class="btn-water" data-amount="500">+500 мл</button>
+            </div>
+        </div>
+    `;
+    }
 }

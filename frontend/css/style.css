@@ -81,3 +81,10 @@ input {
 }
 .meal-time { color: #888; font-size: 12px; }
 .warning-text { color: var(--danger-color); font-weight: bold; font-size: 14px; }
+
+.water-widget { text-align: center; }
+.btn-water {
+    background: #61a1d4; color: white; border: none;
+    padding: 8px 15px; border-radius: 20px; cursor: pointer; margin: 5px;
+}
+.btn-water:hover { background: #6c91b5; }
